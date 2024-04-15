@@ -6,7 +6,8 @@ const usersSchema = new mongoose.Schema({
     password: { type: String, required: true },
     role: { type: mongoose.Schema.Types.ObjectId, ref: 'roles' }, // Référence à la table des rôles
     mobileNumber: { type: String },
-    panNumber: { type: String }
+    panNumber: { type: String },
+    token: { type: String } // Champ pour stocker le token
 }, { timestamps: true });
 
 const users = mongoose.model('users', usersSchema);

@@ -5,8 +5,10 @@ const router = express.Router();
 const UserController = require('../Controllers/UserController');
 
 
-router.post('/add-user',authorizeAdmin, UserController.addUser);
+router.post('/add-user', UserController.addUser);
 router.post('/login', UserController.loginUser);
+router.post('/logout', UserController.logoutUser);
+
 
 
 

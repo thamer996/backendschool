@@ -28,10 +28,6 @@ async function addUser(req, res) {
     }
 }
 
-
-
-
-
 // Controller for user login
 async function loginUser(req, res) {
     try {
@@ -64,5 +60,23 @@ async function loginUser(req, res) {
     }
 }
 
-module.exports = { loginUser,addUser };
+async function logoutUser(req, res) {
+    try {
+        // Obtenez l'utilisateur à partir du jeton d'authentification
+        const user = req.user;
 
+        // Réinitialiser le champ token de l'utilisateur
+        user.token = null;
+
+        // Enregistrez les modifications dans la base de données
+        await user.save();
+
+        // Répondre avec un message de succès
+        return res.status(200).json({ message: 'Logout successful' });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ error: 'Internal server error' });
+    }
+}
+
+module.exports = { loginUser, addUser, logoutUser };
