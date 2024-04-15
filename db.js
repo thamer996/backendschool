@@ -1,7 +1,7 @@
 // db.js
 const mongoose = require('mongoose');
 
-const uri = 'mongodb://localhost:27017/school';
+const uri = 'mongodb+srv://school:school@cluster0.qcq1mws.mongodb.net/school?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(uri, {
   

@@ -6,6 +6,9 @@ const teacherRoute = require('./Routes/teacherRoute');
 const adminRoute = require('./Routes/adminRoute'); 
 const classRoute = require('./Routes/classRoute'); 
 const homeworkRoute = require('./Routes/homeworkRoute'); 
+
+const rolesRoute = require('./Routes/rolesRoute'); 
+const usersRoute = require('./Routes/usersRoute'); 
 const cors = require('cors');
 
 
@@ -22,6 +25,8 @@ app.use('/api', teacherRoute);
 app.use('/api', adminRoute);
 app.use('/api', classRoute);
 app.use('/api', homeworkRoute);
+app.use('/api', rolesRoute);
+app.use('/api', usersRoute);
 
 
 app.use(cors());
