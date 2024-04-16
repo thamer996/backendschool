@@ -1,5 +1,5 @@
 // controllers/candidateController.js
-const Student = require('../Models/student');
+const Student = require('../Models/students');
 
 async function createStudent(req, res) {
   try {

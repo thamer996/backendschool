@@ -1,6 +1,6 @@
 // controllers/classController.js
 
-const Class = require('../Models/class');
+const Class = require('../Models/classes');
 
 async function createClass(req, res) {
   try {

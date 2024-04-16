@@ -1,6 +1,6 @@
 // controllers/homeworkController.js
 
-const Homework = require('../Models/homework');
+const Homework = require('../Models/homeworks');
 
 async function createHomework(req, res) {
   try {
@@ -13,7 +13,7 @@ async function createHomework(req, res) {
 }
 
 async function getAllHomeworks(req, res) {
-  try {
+  try { 
     const homeworks = await Homework.find();
     res.status(200).json(homeworks);
   } catch (error) {
